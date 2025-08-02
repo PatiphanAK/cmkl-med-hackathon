@@ -1,0 +1,60 @@
+nohup: ignoring input
+INFO:     Started server process [1707894]
+INFO:     Waiting for application startup.
+INFO:main:🚀 Initializing Thai QA System...
+INFO:main:🔄 Loading embedder...
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cuda:0
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: BAAI/bge-m3
+INFO:main:✅ Embedder loaded successfully!
+INFO:main:📥 Loading precomputed data...
+INFO:main:✅ Loaded embeddings: (376, 1024)
+INFO:main:✅ Loaded documents: 808 documents
+INFO:main:🔄 Loading model...
+The following generation flags are not valid and may be ignored: ['cache_implementation']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+The following generation flags are not valid and may be ignored: ['cache_implementation']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.38it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.87it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.78it/s]
+INFO:main:✅ Model loaded successfully!
+INFO:main:✅ Thai QA System initialized successfully!
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:5000 (Press CTRL+C to quit)
+INFO:main:Received question: ผู้ป่วยมีอาการไข้ ปวดหัว ควรไปแผนกใด? ก.Internal Medicine ข.Surgery ค.Pediatrics...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]/home/siamai/tatar/cmkl-med-hackathon/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+Batches: 100%|██████████| 1/1 [00:00<00:00,  7.03it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.02it/s]
+The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+INFO:main:Used 3 relevant documents
+INFO:main:  Doc 1: [doc_csv.csv] similarity: 0.570
+INFO:main:  Doc 2: [doc_csv.csv] similarity: 0.563
+INFO:main:Responding with answer: ก
+INFO:     172.16.30.254:55087 - "POST /eval HTTP/1.1" 200 OK
+INFO:main:Received question: ผู้ป่วยมีอาการไข้ ปวดหัว ควรไปแผนกใด? ก.Internal Medicine ข.Surgery ค.Pediatrics...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]/home/siamai/tatar/cmkl-med-hackathon/.venv/lib/python3.12/site-packages/torch/nn/modules/module.py:1762: FutureWarning: `encoder_attention_mask` is deprecated and will be removed in version 4.55.0 for `XLMRobertaSdpaSelfAttention.forward`.
+  return forward_call(*args, **kwargs)
+Batches: 100%|██████████| 1/1 [00:00<00:00, 134.67it/s]
+INFO:main:Used 3 relevant documents
+INFO:main:  Doc 1: [doc_csv.csv] similarity: 0.570
+INFO:main:  Doc 2: [doc_csv.csv] similarity: 0.563
+INFO:main:Responding with answer: ก
+INFO:     172.16.30.254:55088 - "POST /eval HTTP/1.1" 200 OK
+INFO:main:Received question: ผู้ป่วยมีอาการไข้ ปวดหัว ควรไปแผนกใด? ก.Internal Medicine ข.Surgery ค.Pediatrics...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 136.69it/s]
+INFO:main:Used 3 relevant documents
+INFO:main:  Doc 1: [doc_csv.csv] similarity: 0.570
+INFO:main:  Doc 2: [doc_csv.csv] similarity: 0.563
+INFO:main:Responding with answer: ก
+INFO:     172.16.30.254:55090 - "POST /eval HTTP/1.1" 200 OK
+INFO:main:Received question: ผู้ป่วยมีอาการไข้ ปวดหัว ควรไปแผนกใด? ก.Internal Medicine ข.Surgery ค.Pediatrics...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 138.52it/s]
+INFO:main:Used 3 relevant documents
+INFO:main:  Doc 1: [doc_csv.csv] similarity: 0.570
+INFO:main:  Doc 2: [doc_csv.csv] similarity: 0.563
+INFO:main:Responding with answer: ก
+INFO:     172.16.30.254:55091 - "POST /eval HTTP/1.1" 200 OK
+INFO:main:Received question: ผู้ป่วยมีอาการไข้ ปวดหัว ควรไปแผนกใด? ก.Internal Medicine ข.Surgery ค.Pediatrics...
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 142.11it/s]
+INFO:main:Used 3 relevant documents
+INFO:main:  Doc 1: [doc_csv.csv] similarity: 0.570
+INFO:main:  Doc 2: [doc_csv.csv] similarity: 0.563
+INFO:main:Responding with answer: ก
+INFO:     172.16.30.254:55093 - "POST /eval HTTP/1.1" 200 OK

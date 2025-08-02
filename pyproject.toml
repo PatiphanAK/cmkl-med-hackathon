@@ -1,0 +1,29 @@
+[project]
+name = "agentic"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.9.0",
+    "bitsandbytes>=0.46.1",
+    "chromadb>=1.0.15",
+    "fastapi[standard]>=0.116.1",
+    "jupyter>=1.1.1",
+    "langchain>=0.3.27",
+    "langchain-cli>=0.0.36",
+    "langchain-community>=0.3.27",
+    "langchain-core>=0.3.72",
+    "langchain-huggingface>=0.3.1",
+    "notebook>=7.4.4",
+    "pandas>=2.3.1",
+    "psycopg2-binary>=2.9.10",
+    "pydantic>=2.11.7",
+    "pypdf2>=3.0.1",
+    "python-multipart>=0.0.20",
+    "sentence-transformers>=5.0.0",
+    "sentencepiece>=0.2.0",
+    "torch>=2.7.1",
+    "transformers>=4.54.1",
+    "uvicorn>=0.35.0",
+]
