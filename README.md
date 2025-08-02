@@ -26,7 +26,6 @@ source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 ```bash
 # Install all dependencies from pyproject.toml
 uv sync
-
 ```
 
 4. **Verify installation**
@@ -38,7 +37,7 @@ uv pip list
 
 ### Start the FastAPI server
 ```bash
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
+uvicorn main:app --reload --host 0.0.0.0 --port 5000
 ```
 
 ### Launch Jupyter Notebook (for development)
@@ -48,7 +47,7 @@ jupyter notebook
 
 ### Run in production
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000
+uvicorn main:app --host 0.0.0.0 --port 5000
 ```
 
 ## ⚙️ Dependencies Overview
@@ -148,6 +147,52 @@ LANGUAGE_MODEL_PATH=scb10x/typhoon2.1-gemma3-4b
 EMBEDDER_PATH=BAAI/bge-m3
 ```
 
+## 📝 Usage Example
+
+### 📮 API Endpoint
+```http
+POST http://{YOUR_VM_IP}:5000/eval
+```
+
+### 🔖 Headers
+```http
+Content-Type: application/json
+```
+
+### 📤 Request Payload
+```json
+{
+  "question": "ผมปวดท้องมาก อ้วกด้วย ไปแผนกไหนดี? ก. Endocrinology ข. Orthopedics ค. Internal Medicine"
+}
+```
+
+### 📥 Response Payload
+```json
+{
+  "answer": "ค",
+  "reason": "หากมีอาการปวดท้องและอาเจียน ควรไปพบแพทย์ที่แผนกอายุรกรรม (Internal Medicine) ดังนั้นจึงตอบข้อ ค."
+}
+```
+
+### 🧪 cURL Example
+```bash
+curl -X POST http://{YOUR_VM_IP}:5000/eval \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "ผมปวดท้องมาก อ้วกด้วย ไปแผนกไหนดี? ก. Endocrinology ข. Orthopedics ค. Internal Medicine"
+  }'
+```
+
+### 📘 Translation Example
+**Question:** "I have severe stomach pain and vomiting. Which department should I go to?
+A. Endocrinology
+B. Orthopedics
+C. Internal Medicine"
+
+**Answer:** "C"
+
+**Reason:** "If you have stomach pain and vomiting, you should visit the Internal Medicine department. Therefore, the answer is C."
+
 ## 🚀 Future Improvements
 
 - [ ] **Scalable Vector Search**: Integrate FAISS or PgVector
@@ -155,17 +200,6 @@ EMBEDDER_PATH=BAAI/bge-m3
 - [ ] **Batch Processing**: Support multiple documents simultaneously
 - [ ] **API Enhancement**: RESTful endpoints for document upload
 - [ ] **Monitoring**: Add logging and performance metrics
-
-## 🧠 Credits
-
-- **👨‍💻 Author**: Patiphan
-- **🏫 Institution**: CMKL University
-- **🔍 OCR Model**: [Typhoon-OCR-7B](https://huggingface.co/scb10x/typhoon-ocr-7b)
-- **🤖 Language Model**: [Typhoon2.1-Gemma3-4B](https://huggingface.co/scb10x/typhoon2.1-gemma3-4b)
-- **📊 Embedding Model**: [BGE-M3](https://huggingface.co/BAAI/bge-m3)
-
-## 📝 Usage Example
-
 
 ## 🐛 Troubleshooting
 
@@ -190,6 +224,14 @@ uv venv --clear
 source .venv/bin/activate
 uv sync
 ```
+
+## 🧠 Credits
+
+- **👨‍💻 Author**: PATIPHAN, PHIMNARA, RATTANAN, NOPPARATH, PURIN
+- **🏫 Institution**: CMKL University
+- **🔍 OCR Model**: [Typhoon-OCR-7B](https://huggingface.co/scb10x/typhoon-ocr-7b)
+- **🤖 Language Model**: [Typhoon2.1-Gemma3-4B](https://huggingface.co/scb10x/typhoon2.1-gemma3-4b)
+- **📊 Embedding Model**: [BGE-M3](https://huggingface.co/BAAI/bge-m3)
 
 ## 📄 License
 
