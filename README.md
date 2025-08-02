@@ -225,7 +225,7 @@ source .venv/bin/activate
 uv sync
 ```
 
-## 🧠 Credits
+## 📐e = ∑∞ⁿ⁼⁰ ¹ₙ🤓 Developer Team
 
 - **👨‍💻 Author**: PATIPHAN, PHIMNARA, RATTANAN, NOPPARATH, PURIN
 - **🏫 Institution**: CMKL University
